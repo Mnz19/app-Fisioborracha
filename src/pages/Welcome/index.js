@@ -16,7 +16,7 @@ export default function Welcome(){
             </View>
             <Animatable.View animation={"fadeInUp"} style={styles.containerForm}>
                 <Text style={styles.title}>Seja bem-vindo</Text>
-                <Text style={styles.text}>Aqui v ocê tem resultados</Text>
+                <Text style={styles.text}>Aqui você tem resultados</Text>
 
                 <TouchableOpacity 
                 style={styles.button}
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         fontWeight:"500",
         fontSize: 35,
         marginTop:20,
-        marginBottom: 10,
+        marginBottom: 5,
     },
     text:{
         fontSize:18,
@@ -60,13 +60,13 @@ const styles = StyleSheet.create({
         position:'absolute',
         backgroundColor:'white',
         borderRadius: 50,
-        paddingVertical: 12,
+        paddingVertical: 10,
         width: '50%',
-        bottom: '45%',
+        bottom: '42%',
     },
     buttonText:{
         textAlign:'center',
         fontWeight:'bold',
-        fontSize:'20',
+        fontSize:20,
     }
 })
