@@ -1,36 +1,43 @@
 import React from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { useNavigation  } from "@react-navigation/native";
 
 import * as Animatable from 'react-native-animatable'
 
 export default function SignIn(){
+    const navigation = useNavigation();
     return (
-        <View style={style.container}>
-            <Animatable.View animation={"fadeInLeft"} style={style.containerHeader}>
-                <Text style={style.message}>Bem-Vindo(a)</Text>
+        <View style={styles.container}>
+            <Animatable.View animation={"fadeInLeft"} style={styles.containerHeader}>
+                <Text style={styles.message}>Bem-Vindo(a)</Text>
             </Animatable.View>
-            <Animatable.View animation={"fadeInUp"} style={style.containerForm}>
-                <Text style={style.title}>Usuário</Text>
+            <Animatable.View animation={"fadeInUp"} style={styles.containerForm}>
+                <Text style={styles.title}>Usuário</Text>
                 <TextInput
                     placeholder="Usuário"
-                    style={style.input}
+                    style={styles.input}
                 />
-                <Text style={style.title}>Senha</Text>
+                <Text style={styles.title}>Senha</Text>
                 <TextInput
                     placeholder="Senha"
-                    style={style.input}
+                    style={styles.input}
+                    secureTextEntry={true}
+
                 />
-                <TouchableOpacity style={style.button}>
-                    <Text style={style.buttonText}>Entrar</Text>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttonText}>Entrar</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={style.buttonRegister}>
-                    <Text style={style.registerText}>Não possui conta? Cadastre-se</Text>
+                <TouchableOpacity 
+                style={styles.buttonRegister}
+                onPress={ () => navigation.navigate('SignUp')}
+                >
+                    <Text style={styles.registerText}>Não possui conta? Cadastre-se</Text>
                 </TouchableOpacity>
             </Animatable.View>
         </View>
     )
 }
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor:'#00e0b7',
@@ -67,8 +74,6 @@ const style = StyleSheet.create({
         backgroundColor: '#00e0b7',
         height: 31,
         borderRadius: 8,
-        display:'flex',
-        justifyContent:'center',
         alignItems: 'center',
         marginBottom:8,
     },
